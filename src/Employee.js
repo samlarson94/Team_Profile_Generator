@@ -38,6 +38,8 @@ class Employee {
 }
 // Create Subclass for Each 
 
-
+class Manager extends Employee {
+    
+}
 
 // Export using Module.export
