@@ -197,37 +197,40 @@ const InternPrompts = () => {
 
 
 
-// Create a Function to write responses to HTML file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => 
-    if (err) {
-        console.log(err);
-        return;
-    }
-)};
 
-// Create a Function to initialize app
+//////////////////////////////
 
-function init() {
-    inquirer
-    .prompt(questions)
-    .then((answers) => {
-        var htmlInput = generateHTML(answers);
-        writeToFile("./dist/index.html", htmlInput);
-    })
+// // Create a Function to write responses to HTML file
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, (err) => 
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+// )};
 
-    .catch((error) => {
-        if (error.isTtyError) {
-            //Prompt couldn't be rendered in the current environment
-            console.log("Something went wrong")
-        } else {
-            // Something went wrong
-            console.log("Something went wrong")
-        }
-    });
-}
+// // Create a Function to initialize app
+
+// function init() {
+//     inquirer
+//     .prompt(questions)
+//     .then((answers) => {
+//         var htmlInput = generateHTML(answers);
+//         writeToFile("./dist/index.html", htmlInput);
+//     })
+
+//     .catch((error) => {
+//         if (error.isTtyError) {
+//             //Prompt couldn't be rendered in the current environment
+//             console.log("Something went wrong")
+//         } else {
+//             // Something went wrong
+//             console.log("Something went wrong")
+//         }
+//     });
+// }
 
 
 
-// Call init Function
-init();
+// // Call init Function
+// init();
