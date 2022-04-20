@@ -58,15 +58,144 @@ const typeOfMember = () => {
 
     };
 
-typeOfMember();
 
 // Manager Questions
+const managerPrompts = () => {
+    inquirer 
+    .prompt( [
+        {
+        type: 'input',
+        name: 'Name',  
+        message: "What is the Manager's name?"
+        }, 
+        {
+        type: 'input', 
+        name: 'id',
+        message: "What is the Manager's employee id number?"
+        }, 
+        {
+        type: 'input',
+        name: 'email',
+        message: "What is the Manager's email address?"
+        }, 
+        {
+        type: 'input',
+        name: 'phone',
+        message: "What is the office phone number? (enter numbers only ex '6129635822')"
+        }
+    ])
 
+    .then((answers) => {
+        const newManager = new Manager (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.phone
+        );
+        managers.push(newManager);
+        typeOfMember();
+    })
+
+}
 
 // Engineer Questions
+const engineerPrompts = () => {
+    inquirer 
+    .prompt( [
+        {
+        type: 'input',
+        name: 'Name',  
+        message: "What is the Engineer's name?"
+        }, 
+        {
+        type: 'input', 
+        name: 'id',
+        message: "What is the Engineer's employee id number?"
+        }, 
+        {
+        type: 'input',
+        name: 'email',
+        message: "What is the Engineer's email address?"
+        }, 
+        {
+        type: 'input',
+        name: 'github',
+        message: "What is the Engineer's Github username (ex: SuperC0d3r99)"
+        }
+    ])
 
+    .then((answers) => {
+        const newEngineer = new Engineer (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.github
+        );
+        managers.push(newEngineer);
+        typeOfMember();
+    })
+
+}
 
 // Intern Questions
+
+const InternPrompts = () => {
+    inquirer 
+    .prompt( [
+        {
+        type: 'input',
+        name: 'Name',  
+        message: "What is the Intern's name?"
+        }, 
+        {
+        type: 'input', 
+        name: 'id',
+        message: "What is the Intern's employee id number?"
+        }, 
+        {
+        type: 'input',
+        name: 'email',
+        message: "What is the Intern's email address?"
+        }, 
+        {
+        type: 'input',
+        name: 'school',
+        message: "Where does the intern go to school?"
+        }
+    ])
+
+    .then((answers) => {
+        const newIntern = new Intern (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.school
+        );
+        managers.push(newIntern);
+        typeOfMember();
+    })
+
+}
+
+
+//Add Functions to append team-member information to HTML
+
+//Append Manager - add to html and call generateManager()
+
+//Append Engineer- add to html and call generateEngineer()
+
+//Append Intern - add to html and call generateIntern()
+
+//====== Need function to delete existing HTML before compiling new Team??
+
+//Append HTML Top
+//Append HTML Bottom
+
+//Add generateHTML function  -- Provide overall page structure.  Will need to pass full HTML skeleton in as an object literal.  Add all relevant links/scripts
+
+//Add individual generateIntern, generateManager, generateEngineer functions to pass information into HTML div's
+
+
 
 // Create a Function to write responses to HTML file
 function writeToFile(fileName, data) {
@@ -78,7 +207,6 @@ function writeToFile(fileName, data) {
 )};
 
 // Create a Function to initialize app
-
 
 function init() {
     inquirer
