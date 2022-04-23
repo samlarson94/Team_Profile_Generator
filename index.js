@@ -131,7 +131,7 @@ const engineerPrompts = () => {
             answers.email,
             answers.github
         );
-        managers.push(newEngineer);
+        engineers.push(newEngineer);
         typeOfMember();
     })
 
@@ -171,7 +171,7 @@ const InternPrompts = () => {
             answers.email,
             answers.school
         );
-        managers.push(newIntern);
+        interns.push(newIntern);
         typeOfMember();
     })
 
