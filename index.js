@@ -146,7 +146,7 @@ const engineerPrompts = () => {
 
 // Intern Questions
 
-const InternPrompts = () => {
+const internPrompts = () => {
   inquirer
     .prompt([
       {
