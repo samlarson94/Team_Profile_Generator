@@ -1,0 +1,20 @@
+.jumbotron {
+    background-image: linear-gradient(to bottom right, rgba(97, 50, 12, 0), rgb(87, 108, 172));
+    color: #264653;
+    text-shadow: black 1px 1px;
+}
+
+body {
+    background-color: #2a9d8f;
+}
+
+.card-custom {
+    background-color: rgb(179, 186, 207);
+    color: #000000;
+    text-shadow: white 1px 1px;
+    max-width: 500px;
+}
+
+.employee {
+    padding-left: 4px;
+}
