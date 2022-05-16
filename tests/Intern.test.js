@@ -20,7 +20,7 @@ describe("Intern", () => {
   describe("School", () => {
     it("create new school", () => {
       const obj = new Intern("Sam", 19, "sam@yahoo.com", "NDSU");
-      expect(obj.github).toEqual("NDSU");
+      expect(obj.school).toEqual("NDSU");
     });
   });
 

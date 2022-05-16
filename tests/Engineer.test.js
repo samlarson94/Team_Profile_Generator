@@ -9,7 +9,7 @@ describe("Engineer", () => {
     it("should initiate an object", () => {
       const obj = new Engineer();
       //Expect our result to equal an obhect
-      expect(typeof obj).toEqual("object");
+      expect(typeof(obj)).toEqual("object");
     });
   });
 
@@ -22,7 +22,7 @@ describe("Engineer", () => {
   describe("Github", () => {
     it("create a new github", () => {
       const obj = new Engineer("Sam", 19, "sam@yahoo.com", "samlarson94");
-      expect(obj.github).toEqual("samlarson94");
+      expect(obj.gitHub).toEqual("samlarson94");
     });
   });
 
@@ -33,7 +33,7 @@ describe("Engineer", () => {
   describe("getGithub", () => {
     it("create new github through getGithub() method", () => {
       const obj = new Engineer("Sam", 19, "sam@yahoo.com", "samlarson94");
-      expect(obj.getGithub()).toEqual("samlarson");
+      expect(obj.getGithub()).toEqual("samlarson94");
     });
   });
 

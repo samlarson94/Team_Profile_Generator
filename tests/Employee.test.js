@@ -9,7 +9,7 @@ describe("Employee", () => {
     it("should initiate an object", () => {
       const obj = new Employee();
       //Expect our result to equal an object
-      expect(typeof obj).toEqual("object");
+      expect(typeof(obj)).toEqual("object");
     });
   });
 
@@ -35,7 +35,7 @@ describe("Employee", () => {
   describe("Email", () => {
     it("create a new email", () => {
       const obj = new Employee("Sam", 19, "sam@yahoo.com");
-      expect(obj.id).toEqual("sam@yahoo.com");
+      expect(obj.email).toEqual("sam@yahoo.com");
     });
   });
 
