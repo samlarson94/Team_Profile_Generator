@@ -1,18 +1,19 @@
 .jumbotron {
-    background-image: linear-gradient(to bottom right, rgba(97, 50, 12, 0), rgb(87, 108, 172));
-    color: #264653;
+    background-image: linear-gradient(to bottom right, rgba(240, 11, 11, 0), rgb(248, 0, 0));
+    color: white;
     text-shadow: black 1px 1px;
 }
 
 body {
-    background-color: #2a9d8f;
+    background-color: #4d4d4d;
 }
 
 .card-custom {
-    background-color: rgb(179, 186, 207);
+    background-color: rgb(29, 250, 0);
     color: #000000;
-    text-shadow: white 1px 1px;
+    /* text-shadow: rgb(0, 0, 0) 1px 1px; */
     max-width: 500px;
+    border: 2px solid red;
 }
 
 .employee {
