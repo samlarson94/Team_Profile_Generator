@@ -1,6 +1,7 @@
 // Include packages required for application to run
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateTeam = require('./src/page-template.js')
 
 //Require Team Files
 const Engineer = require('./lib/Engineer');
@@ -46,7 +47,7 @@ const typeOfMember = () => {
    
     ])
      // Create next step to determine which question list to move to next
-     then.((answers) => {
+     .then((answers) => {
          if (answers.role === 'Manager') {
              managerPrompts();
          } else if(answers.role === 'Engineer'){

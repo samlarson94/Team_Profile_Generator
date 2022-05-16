@@ -8,7 +8,7 @@ describe("Employee", () => {
         // Test Object
         it("should initiate an object", () => {
             const obj = new Employee();
-            //Expect our result to equal an obhect
+            //Expect our result to equal an object
             expect(typeof(obj)).toEqual("object");
         });
     });
@@ -39,11 +39,41 @@ describe("Email", () => {
     });
 });
 
-//Test for Role
 
-});
 
 //==== Test Methods ===== 
 
+//METHODS - getName()
+describe("getName", () => {
+    it("return name by getName() method", () => {
+      const obj = new Employee("Jason");
+      expect(obj.getName()).toEqual("Jason");
+    });
+  });
 
-//===== Test Constructors?? ===== 
+//METHODS - getID()
+describe("getId", () => {
+    it("return id by getId() method", () => {
+      const obj = new Employee("Phillip", 21);
+      expect(obj.getId()).toEqual(21);
+    });
+  });
+
+//METHODS - getEmail()
+describe("getEmail", () => {
+    it("return email by getEmail() method", () => {
+      const obj = new Employee("Jason", 21, "jason@yahoo.com");
+      expect(obj.getEmail()).toEqual("jason@yahoo.com");
+    });
+  });
+
+//METHODS - getRole()
+ describe("getRole", () => {
+      it("return role by getRole() method", () => {
+        const role = "Employee"; //need to define role here
+        const obj = new Employee("Jason", 21, "jason@yahoo.com");
+        expect(obj.getRole()).toEqual(role);
+      });
+    });
+
+});
