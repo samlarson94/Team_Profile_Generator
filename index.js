@@ -1,23 +1,16 @@
-// Include packages required for application to run
+// Include dependencies
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateTeam = require('./src/page-template.js')
 
-//Require Team Files
+// Require Team Member Classes
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 
-const generateEmployees = require("./src/Employee");
-const generateEngineers = require("./src/Engineer");
-const generateManger = require("./src/Manager");
-const generateInterns = require("./src/Intern");
-
-// Add an Arrays to store Employee Data
+// Add empty Arrays to store Role Data
 const managers = [];
 const engineers =[];
 const interns =[];
-
 
 // Add prompt for new Team member
 const getTeamMembers = () => {
@@ -29,9 +22,24 @@ const getTeamMembers = () => {
                 message: 'Would you like to add another team member?'
             }
         ])
+        .then((answers) => {
+            if(answers.getTeamMembers === true) {
+                typeOfMember();
+            }else{
+                console.log(managers, engineers, interns);
+                module.exports = managers;
+                module.exports = engineers;
+                module.exports = interns;
+                // deleteHTML();
+                // topHTMLFile();
+                // generateManager();
+                // generateEngineer();
+                // generateIntern();
+                // bottomHTMLFile();
+                return answers;
+            }
+        });
 };
-
-/// HOW TO BREAK OUT OF THIS PROMPT STRUCTURE AND GO TO ENGINEER/MANAGER/ENGINEER SPECIFICALLY? ---> Create Seperate Sets of Questions instead of one Array
 
 //Type of Team member 
 
@@ -59,6 +67,7 @@ const typeOfMember = () => {
 
     };
 
+typeOfMember();
 
 // Manager Questions
 const managerPrompts = () => {
@@ -66,7 +75,7 @@ const managerPrompts = () => {
     .prompt( [
         {
         type: 'input',
-        name: 'Name',  
+        name: 'name',  
         message: "What is the Manager's name?"
         }, 
         {
@@ -81,7 +90,7 @@ const managerPrompts = () => {
         }, 
         {
         type: 'input',
-        name: 'phone',
+        name: 'officeNumber',
         message: "What is the office phone number? (enter numbers only ex '6129635822')"
         }
     ])
@@ -95,7 +104,7 @@ const managerPrompts = () => {
         );
         managers.push(newManager);
         typeOfMember();
-    })
+    });
 
 }
 
@@ -105,7 +114,7 @@ const engineerPrompts = () => {
     .prompt( [
         {
         type: 'input',
-        name: 'Name',  
+        name: 'name',  
         message: "What is the Engineer's name?"
         }, 
         {
@@ -121,7 +130,7 @@ const engineerPrompts = () => {
         {
         type: 'input',
         name: 'github',
-        message: "What is the Engineer's Github username (ex: SuperC0d3r99)"
+        message: "What is the Engineer's Github username (ex: MrSuperC0d3r99)"
         }
     ])
 
@@ -134,9 +143,9 @@ const engineerPrompts = () => {
         );
         engineers.push(newEngineer);
         typeOfMember();
-    })
+    });
 
-}
+};
 
 // Intern Questions
 
@@ -145,7 +154,7 @@ const InternPrompts = () => {
     .prompt( [
         {
         type: 'input',
-        name: 'Name',  
+        name: 'name',  
         message: "What is the Intern's name?"
         }, 
         {
@@ -174,12 +183,14 @@ const InternPrompts = () => {
         );
         interns.push(newIntern);
         typeOfMember();
-    })
+    });
 
-}
+};
 
 
-//Add Functions to append team-member information to HTML
+// ==== Generate HTML ====
+
+
 
 //Append Manager - add to html and call generateManager()
 
