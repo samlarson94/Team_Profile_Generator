@@ -190,7 +190,10 @@ const InternPrompts = () => {
 
 // ==== Generate HTML ====
 
-
+// Delete HTML file 
+const deleteHTML = () => {
+    fs.unlinkSync('./index.html');
+}
 
 //Append Manager - add to html and call generateManager()
 
