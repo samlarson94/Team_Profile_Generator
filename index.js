@@ -102,7 +102,7 @@ const managerPrompts = () => {
         answers.phone
       );
       managers.push(newManager);
-      typeOfMember();
+      getTeamMembers();
     });
 };
 
@@ -140,7 +140,7 @@ const engineerPrompts = () => {
         answers.github
       );
       engineers.push(newEngineer);
-      typeOfMember();
+      getTeamMembers();
     });
 };
 
@@ -179,7 +179,7 @@ const internPrompts = () => {
         answers.school
       );
       interns.push(newIntern);
-      typeOfMember();
+      getTeamMembers();
     });
 };
 
